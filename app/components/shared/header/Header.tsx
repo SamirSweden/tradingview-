@@ -25,8 +25,11 @@ const Header = () => {
                         flex items-center justify-between
                         px-6 py-4
                         rounded-full
-                        backdrop-blur-sm
+                        backdrop-blur-xl
+                        max-[500px]:bg-black
                         shadow-[0_8px_32px_rgba(0,0,0,0.37)]
+                        max-[500px]:border
+                        max-[500px]:border-gray-700
                     "
                 >
                     <Link
@@ -52,7 +55,7 @@ const Header = () => {
                                     className="
                                     relative
                                     px-5 py-2
-                                    rounded-xl
+                                    rounded-full
                                     text-sm
                                     font-medium
                                     text-white/70
@@ -71,7 +74,7 @@ const Header = () => {
                     <div className="flex items-center gap-3">
 
                         <button className={`
-                            bg-white text-black font-mono py-2 px-6 rounded-2xl cursor-pointer 
+                            bg-white text-black font-mono py-2 px-6 rounded-2xl cursor-pointer max-[430px]:hidden
                         `}>
                             mnt
                         </button>
@@ -84,9 +87,11 @@ const Header = () => {
                                 w-11 h-11
                                 rounded-xl
                                 border border-white/10
-                                bg-white/10
+                                bg-[#111]
                                 text-white
                                 backdrop-blur-md
+                                outline-none
+                                border-none
                             "
                         >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -150,6 +155,7 @@ const Header = () => {
                         >
                             Get Started
                         </button>
+                        <span className={'text-gray-400 text-center text-sm '}>kraken &mdash; ryan</span>
                     </div>
                 </div>
             </div>
