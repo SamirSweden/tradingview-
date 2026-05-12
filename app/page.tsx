@@ -1,5 +1,6 @@
 import Header from "@/app/components/shared/header/Header";
 import Banner from "@/app/components/shared/banners/Banner";
+import BannerCoin from "@/app/components/shared/coins/bannerCoin";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
 
             <div className="pt-62">
                 <Banner />
+                <BannerCoin />
             </div>
         </main>
     </>
