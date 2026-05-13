@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export default  function CheckListLayout({children} : {children: React.ReactNode}) {
     return (
         <>
-            <Header />
             <main>
                 {children}
             </main>

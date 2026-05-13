@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
     { title: "Check-list", path: "/checklist" },
-    { title: "Portfolio", path: "/portfolio" },
+    { title: "Trade", path: "/trade" },
     { title: "Contact", path: "/contact" },
 ];
 
@@ -54,7 +54,7 @@ const Header = () => {
                                     href={item.path}
                                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all
                                         duration-300  ${isActive 
-                                        ? "text-white bg-linear-to-br from-[#525252] to-[#171717]" 
+                                        ? "text-white bg-black border border-[#2e2638]"
                                         : "text-white/70 hover:text-white hover:bg-white/5"
                                     }`}
                                 >

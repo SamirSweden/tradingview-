@@ -55,7 +55,8 @@ function BannerCoin() {
     }
 
     return (
-        <section className=" px-0 bg-black">
+        <>
+        <section className=" px-0 bg-black ">
             <div className="max-w-6xl mx-auto px-6 w-full h-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {coins.map((coin: Coin) => (
@@ -85,7 +86,7 @@ function BannerCoin() {
                                         className="w-16 h-16 rounded-full"
                                     />
                                     <div className={'flex items-center gap-5 flex-col max-[375px]:items-start  '}>
-                                        <h3 className="text-white text-4xl font-light max-[375px]:text-center  ">
+                                        <h3 className="text-white text-2xl font-light max-[375px]:text-center  ">
                                             {coin.symbol.toUpperCase()} Savings APR
                                         </h3>
                                         <span className="text-emerald-400  text-5xl font-semibold mt-3">
@@ -114,6 +115,7 @@ function BannerCoin() {
                 </div>
             </div>
         </section>
+        </>
     );
 }
 
