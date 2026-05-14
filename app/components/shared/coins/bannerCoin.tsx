@@ -56,7 +56,7 @@ function BannerCoin() {
 
     return (
         <>
-        <section className=" px-0 bg-black ">
+        <section className=" px-0 bg-black " style={{paddingTop:'60px'}}>
             <div className="max-w-6xl mx-auto px-6 w-full h-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {coins.map((coin: Coin) => (

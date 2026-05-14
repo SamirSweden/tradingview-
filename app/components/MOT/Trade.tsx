@@ -15,7 +15,7 @@ export default  function Trade({symbol,price}: Props) {
 
     return (
         <>
-            <section className={'h-screen bg-black py-10 px-0'}>
+            <section className={'min-h-screen bg-black px-0'}>
                 <div className="max-w-6xl mx-auto w-full h-full px-6">
                     <div className="flex items-center justify-center">
 

@@ -17,7 +17,7 @@ const Header = () => {
 
 
     return (
-        <header className="fixed top-0 left-0 w-full z-50 px-4 py-4">
+        <header className="bg-black w-full z-50 px-4 py-4">
             <div className="max-w-6xl px-4  mx-auto w-full h-full">
 
                 <div
