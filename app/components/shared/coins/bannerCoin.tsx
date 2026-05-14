@@ -15,22 +15,25 @@ interface Coin {
 }
 
 function BannerCoin() {
-    const [coins, setCoins] = useState<Coin[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [coins , setCoins] = useState<Coin[]>([]);
+    const [loading , setLoading] = useState(true);
+    const [showAll , setShowAll] = useState(false)
+
 
     useEffect(() => {
-        const fetchCoins = async () => {
-            try {
+        const fetchCoins = async  () => {
+            try{
                 const data = await getCoins() as Coin[];
-                setCoins(data);
+                setCoins(data)
             } catch (error) {
-                console.error(error);
-            } finally {
+                console.log(error);
+            }
+            finally {
                 setLoading(false);
             }
-        };
-        fetchCoins();
-    }, []);
+        }
+        fetchCoins()
+    },[])
 
     if (loading) {
         return (
@@ -54,12 +57,15 @@ function BannerCoin() {
         );
     }
 
+
+    const visibleCoins = showAll ? coins : coins.slice(0,6);
+
     return (
         <>
-        <section className=" px-0 bg-black " style={{paddingTop:'60px'}}>
+        <section className=" px-0 bg-black " style={{padding:'60px'}}>
             <div className="max-w-6xl mx-auto px-6 w-full h-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {coins.map((coin: Coin) => (
+                    {visibleCoins.map((coin: Coin) => (
                         <div
                             className="
                             relative
@@ -113,6 +119,29 @@ function BannerCoin() {
                         </div>
                     ))}
                 </div>
+
+                {!showAll && coins.length > 6 && (
+                    <div className={'flex mt-10 justify-center'}>
+                        <button onClick={() => setShowAll(true)}
+                                className={`
+                                    text-white 
+                                    text-lg 
+                                    font-mono 
+                                    text-center 
+                                    py-3 px-7 
+                                    hover:bg-white/5
+                                    bg-transparent
+                                    rounded-3xl border border-white/10
+                                    transition-transform
+                                    duration-300
+                                    hover:-translate-y-2
+                                    hover:rotate-6
+                                    cursor-pointer
+                                `} style={{background:'#0f0a0a'}}>
+                            show more
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
         </>
